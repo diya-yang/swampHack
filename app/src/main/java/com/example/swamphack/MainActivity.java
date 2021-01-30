@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,30 +13,39 @@ import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.WriteBatch;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Vector;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final String AUTHOR_KEY = "author";
     public static final String QUOTE_KEY = "quote";
     public static final String TAG = "Check";
+    public static final String COURSE_ID = "courseID";
+    public static final String COURSE_TIME = "courseTime";
 
     private TextView mQuoteTextView;
 
     //private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private DocumentReference mDocRef = FirebaseFirestore.getInstance().document("sampleData/inspiration");
+
+    private CollectionReference UF = FirebaseFirestore.getInstance().collection("University of Florida");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mQuoteTextView = findViewById(R.id.textView3);
+
     }
 
     @Override
@@ -71,8 +81,30 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void creatData(View view){
+
+        for (int i = 0; i < 20; i++) {
+            int index = i+3000;
+            String courseID = "ABE" + Integer.toString(index);
+            double random = Math.random();
+            int hour = (int) (22 * random);
+            String courseTime = Integer.toString(hour) + ":00 ~ " + Integer.toString(hour+1) + ":15";
+            Map<String,Object> courseInfo = new HashMap<String, Object>();
+            courseInfo.put(COURSE_ID, courseID);
+            courseInfo.put(COURSE_TIME, courseTime);
+
+            
+            UF.document(courseID).set(courseInfo).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    Log.d(TAG, "onSuccess: create data success!");
+                }
+            });
+        }
+
+    }
+
     public void saveQuote(View view){
-        
         
         EditText quoteView = findViewById(R.id.textView);
         EditText authorView = findViewById(R.id.textView2);
