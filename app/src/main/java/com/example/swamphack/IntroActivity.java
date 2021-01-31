@@ -11,7 +11,9 @@ import android.view.animation.AnimationUtils;
 
 import com.airbnb.lottie.LottieAnimationView;
 
-public class IntroAcitivity extends AppCompatActivity {
+
+public class IntroActivity extends AppCompatActivity {
+
     public static final String TAG = "test";
 
     //5 sec
@@ -41,7 +43,8 @@ public class IntroAcitivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 Log.d(TAG, "onAnimationStart: is end");
-                Intent intent = new Intent(IntroAcitivity.this, LoginAcitivity.class);
+
+                Intent intent = new Intent(IntroActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
 
