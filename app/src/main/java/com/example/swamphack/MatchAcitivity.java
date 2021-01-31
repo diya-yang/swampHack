@@ -15,16 +15,11 @@ public class MatchAcitivity extends AppCompatActivity {
 
     private ListView listView;
     private ClassListAdapter adapter;
-    private ArrayList<ClassName> classNameArrayList;
+    private ArrayList<ClassName> classNameArrayList = new ArrayList<>();;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match);
-
-        classNameArrayList = new ArrayList<>();
-
-
-
 
 
     }
@@ -42,7 +37,8 @@ public class MatchAcitivity extends AppCompatActivity {
         adapter = new ClassListAdapter(this, R.layout.adapter_class, classNameArrayList);
         listView.setAdapter(adapter);
 
-        intsertedClass.setText(" ");
+        intsertedClass.setText(null);
+        intsertedClass.setHint("Search Your Class");
 
 
 
@@ -51,6 +47,10 @@ public class MatchAcitivity extends AppCompatActivity {
 
     public void onClickCourse(View view){
         Intent intent = new Intent(MatchAcitivity.this, ClassDescriptionActivity.class);
+        startActivity(intent);
+    }
+    public void onClickClassmate(View view){
+        Intent intent = new Intent(MatchAcitivity.this, ClassmateDescriptionActivity.class);
         startActivity(intent);
     }
 }

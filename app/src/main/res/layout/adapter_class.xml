@@ -22,6 +22,7 @@
         android:id="@+id/classmateBtn"
         android:layout_width="230dp"
         android:layout_height="42dp"
+        android:onClick="onClickClassmate"
         android:layout_marginTop="10dp"
         android:text="Find Your Classmates!"
 
