@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SwampHack">
-
-        <activity android:name=".MatchAcitivity"></activity>
+        <activity android:name=".ClassmateActivity"></activity>
+        <activity android:name=".ClassDescriptionActivity" />
+        <activity android:name=".MatchAcitivity" />
         <activity android:name=".IntroAcitivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,7 @@
         <activity android:name=".SignUpAcitivity" />
         <activity android:name=".ForgetPasswordAcitivity" />
         <activity android:name=".LoginAcitivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

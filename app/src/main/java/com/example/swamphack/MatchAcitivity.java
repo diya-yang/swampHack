@@ -32,19 +32,12 @@ public class MatchAcitivity extends AppCompatActivity {
     public void onClickAdd(View view){
 
         listView = (ListView) findViewById(R.id.listView);
-
         String className = null;
-
-
         EditText intsertedClass = findViewById(R.id.insertClass);
 
-
-
         className = intsertedClass.getText().toString();
-
         ClassName className1 = new ClassName(className);
         classNameArrayList.add(className1);
-
 
         adapter = new ClassListAdapter(this, R.layout.adapter_class, classNameArrayList);
         listView.setAdapter(adapter);
@@ -53,6 +46,12 @@ public class MatchAcitivity extends AppCompatActivity {
 
 
 
+
+    }
+
+    public void onClickCourse(View view){
+        Intent intent = new Intent(MatchAcitivity.this, ClassDescriptionActivity.class);
+        startActivity(intent);
     }
 }
 
