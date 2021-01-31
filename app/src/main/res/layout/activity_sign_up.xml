@@ -7,7 +7,7 @@
     android:background="@drawable/loginbackground"
     android:visibility="visible"
 
-    tools:context=".SignUpAcitivity">
+    tools:context=".SignUpActivity">
 
     <TextView
         android:id="@+id/signup"
@@ -38,10 +38,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/signup"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="@id/signup"
         app:layout_constraintTop_toBottomOf="@id/signup"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintVertical_bias="0.03" />
 
     <EditText
         android:id="@+id/signupEmail"
@@ -132,23 +132,6 @@
         app:layout_constraintTop_toBottomOf="@id/signupPswrept"
         app:layout_constraintVertical_bias="0.077" />
 
-    <Button
-        android:id="@+id/signupBtn"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="50dp"
-        android:text="I'm Done!"
-        android:textColor="#000000"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:iconPadding="20dp"
-        app:layout_constraintEnd_toEndOf="@id/signupA"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="@id/signupA"
-        app:layout_constraintTop_toBottomOf="@id/signupA"
-        app:layout_constraintVertical_bias="0.077" />
 
     <EditText
         android:id="@+id/signupA"
@@ -167,7 +150,21 @@
         app:layout_constraintTop_toBottomOf="@id/signupQ"
         app:layout_constraintVertical_bias="0.077" />
 
-
+    <Button
+        android:id="@+id/signupBtn"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="I'm Done!"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:iconPadding="20dp"
+        app:layout_constraintEnd_toEndOf="@id/signupA"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@id/signupA"
+        app:layout_constraintTop_toBottomOf="@id/signupA" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
