@@ -16,8 +16,8 @@ public class ClassmateDescriptionActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.listView_classmate);
 
-        String studentName = null;
-        String studentEmail = null;
+        String studentName = "Mike Smith";
+        String studentEmail = "mike.smith@ufl.edu";
         ArrayList<Classmate> classmateArrayList = new ArrayList<>();
 
         Classmate classmate = new Classmate(studentName,studentEmail);
