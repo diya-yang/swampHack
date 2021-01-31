@@ -23,8 +23,8 @@ public class SignUpActivity extends AppCompatActivity {
     public static final String TAG = "test";
     public static final String USER_EMAIL = "userEmail";
     public static final String USER_PASSWORD = "userPassword";
-    public static final String USER_Q = "userQ";
-    public static final String USER_A = "userA";
+    public static final String USER_Q = "userQuestion";
+    public static final String USER_A = "userAnswer";
 
     private EditText mUserEmail;
     private EditText mUserPassword;

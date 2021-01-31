@@ -31,10 +31,6 @@ public class LoginActivity extends AppCompatActivity {
         mUserName = findViewById(R.id.userName);
         mUserPassword = findViewById(R.id.userPassword);
 
-
-
-
-
         //click sign-up and go to sign up page
         Button signUp_button = (Button) findViewById(R.id.signUp_button);
         signUp_button.setOnClickListener(new View.OnClickListener() {
@@ -61,22 +57,36 @@ public class LoginActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: "+ username);
         String userPassword = mUserPassword.getText().toString();
 
-        userInfoCollection.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        // check username and password
+        userInfoCollection.whereEqualTo("userEmail",username).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                if (!queryDocumentSnapshots.isEmpty())
+                if (queryDocumentSnapshots.size() ==1)
                 {
+                    Log.d(TAG, "onSuccess: size_"+queryDocumentSnapshots.size());
                     for (QueryDocumentSnapshot document : queryDocumentSnapshots)
                     {
                         Log.d(TAG, "onSuccess get data: "+ document.getData());
-
+                        if (userPassword.equals(document.getString("userPassword")))
+                        {
+                            Log.d(TAG, "onSuccess: jump to other activity");
+                            Intent intent = new Intent(LoginActivity.this,MatchAcitivity.class);
+                            startActivity(intent);
+                        }
+                        else {
+                            mUserPassword.setError("wrong password");
+                        }
                     }
+                }
+                else
+                {
+                    mUserName.setError("wrong Email address");
+                    Log.e(TAG, "onSuccess: user name have error");
                 }
             }
         });
 
-        Intent intent = new Intent(LoginActivity.this,MatchAcitivity.class);
-        startActivity(intent);
+
 
     }
 
