@@ -1,21 +1,17 @@
 package com.example.swamphack;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 
 import android.animation.Animator;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.provider.AlarmClock;
 import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 
 import com.airbnb.lottie.LottieAnimationView;
 
-public class Intro extends AppCompatActivity {
+public class IntroActivity extends AppCompatActivity {
     public static final String TAG = "test";
     //5 sec
     private static int SPLASH_SCREEN =5000;
@@ -44,7 +40,7 @@ public class Intro extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 Log.d(TAG, "onAnimationStart: is end");
-                Intent intent = new Intent(Intro.this, Login.class);
+                Intent intent = new Intent(IntroActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
 

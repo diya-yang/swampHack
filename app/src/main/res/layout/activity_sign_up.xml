@@ -5,10 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/loginbackground"
-
-
     android:visibility="visible"
-    tools:context=".SignUp">
+    tools:context=".SignUpActivity">
 
     <TextView
         android:id="@+id/signup"
@@ -78,7 +76,7 @@
         app:layout_constraintVertical_bias="0.077" />
 
     <EditText
-        android:id="@+id/signQ"
+        android:id="@+id/signupQ"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -95,7 +93,7 @@
         app:layout_constraintVertical_bias="0.077" />
 
     <Button
-        android:id="@+id/signBtn"
+        android:id="@+id/signupBtn"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -106,14 +104,14 @@
         android:textSize="15dp"
         android:textStyle="bold"
         app:iconPadding="20dp"
-        app:layout_constraintEnd_toEndOf="@id/signA"
+        app:layout_constraintEnd_toEndOf="@id/signupA"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="@id/signA"
-        app:layout_constraintTop_toBottomOf="@id/signA"
+        app:layout_constraintStart_toStartOf="@id/signupA"
+        app:layout_constraintTop_toBottomOf="@id/signupA"
         app:layout_constraintVertical_bias="0.077" />
 
     <EditText
-        android:id="@+id/signA"
+        android:id="@+id/signupA"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -123,10 +121,10 @@
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/signQ"
+        app:layout_constraintEnd_toEndOf="@id/signupQ"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="@id/signQ"
-        app:layout_constraintTop_toBottomOf="@id/signQ"
+        app:layout_constraintStart_toStartOf="@id/signupQ"
+        app:layout_constraintTop_toBottomOf="@id/signupQ"
         app:layout_constraintVertical_bias="0.077" />
 
 

@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ForgetPassword extends AppCompatActivity {
+public class ForgetPasswordActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class ForgetPassword extends AppCompatActivity {
         forgetDonebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ForgetPassword.this,Login.class);
+                Intent intent = new Intent(ForgetPasswordActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
